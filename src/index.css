@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-brand-base: var(--theme-base);
+  --color-brand-panel: var(--theme-panel);
+  --color-brand-header: var(--theme-header);
+  --color-brand-input: var(--theme-input);
+  --color-brand-border: var(--theme-border);
+  --color-brand-accent: var(--theme-accent);
+  --color-brand-accent-hover: var(--theme-accent-hover);
+  --color-brand-text: var(--theme-text);
+  --color-brand-muted: var(--theme-muted);
+}
+
+@layer base {
+  :root, :root[data-theme="high-density"] {
+    --theme-base: #0A0A0B;
+    --theme-panel: #0F0F11;
+    --theme-header: #141417;
+    --theme-input: #121215;
+    --theme-border: #1e293b;
+    --theme-accent: #4f46e5;
+    --theme-accent-hover: #6366f1;
+    --theme-text: #cbd5e1;
+    --theme-muted: #94a3b8;
+  }
+
+  :root[data-theme="cyber"] {
+    --theme-base: #050510;
+    --theme-panel: #0a0a1a;
+    --theme-header: #101025;
+    --theme-input: #050510;
+    --theme-border: #00ff9d40;
+    --theme-accent: #00ff9d;
+    --theme-accent-hover: #00cc7d;
+    --theme-text: #e2e8f0;
+    --theme-muted: #00ff9d99;
+  }
+
+  :root[data-theme="light"] {
+    --theme-base: #f8fafc;
+    --theme-panel: #ffffff;
+    --theme-header: #f1f5f9;
+    --theme-input: #ffffff;
+    --theme-border: #cbd5e1;
+    --theme-accent: #1d4ed8;
+    --theme-accent-hover: #1e3a8a;
+    --theme-text: #0f172a;
+    --theme-muted: #475569;
+  }
+
+  :root[data-scale="small"] {
+    font-size: 14px;
+  }
+  
+  :root, :root[data-scale="medium"] {
+    font-size: 16px;
+  }
+  
+  :root[data-scale="large"] {
+    font-size: 18px;
+  }
+  
+  :root[data-scale="xlarge"] {
+    font-size: 20px;
+  }
+
+  body {
+    @apply bg-brand-base text-brand-text antialiased font-sans;
+  }
+}
